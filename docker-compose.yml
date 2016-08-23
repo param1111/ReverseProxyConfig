@@ -1,0 +1,20 @@
+version: '2'
+services:
+  proxy:
+    build: ./proxy
+    image: app-proxy:0.1.0
+    ports:
+      - 80:80
+    links:
+      - site1
+      - site2
+  site1:
+    build: ./site1
+    image: app1:0.1.0
+    expose:
+      - 8080
+  site2:
+    build: ./site2
+    image: app2:0.1.0
+    expose:
+      - 8080

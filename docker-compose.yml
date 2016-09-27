@@ -4,7 +4,7 @@ services:
     build: ./proxy
     image: app-proxy:0.1.0
     ports:
-      - 80:80
+      - 8091:80
     links:
       - site1
       - site2
